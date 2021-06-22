@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template3</title>
+</head>
+<body>
+<marquee width = "50%"><h2>publishing exam results</h2></marquee>
+<table border=3 cellspacing=0>
+    <tr>
+        <th style="background-color:green">Subject</th>
+        <th style="background-color:yellow">Marks</th>
+    </tr>
+    {% set sum =[0] %}
+    {% for key , value in result.items() %}
+    {% if sum.append(sum.pop()+ value) -%}{% endif %}
+    <tr>
+        <th>
+            {{key }}
+        </th>
+        <th>{{value}}</th>
+
+    </tr>
+
+    {% endfor %}
+    <tr>
+        <th>Total</th>
+        <th>{{sum.pop()}}</th>
+    </tr></table>
+ {% if result['phy'] >=50 and result['maths']>= 50 and result['chm'] >= 50 and result['bio'] >= 50 %}
+    <h3>Congradulations!!! You passed in all subject</h3>
+    {% else %}
+    <h3>Alas!!! you are failed ..do well in next time</h3>
+  {% endif %}
+
+</body>
+</html>
